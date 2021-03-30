@@ -1,0 +1,11 @@
+.fullCircle
+{
+    width: 200px;
+    height: 200px;
+    bordeR: 1px solid;
+    border-radius: 50%;
+    background-color: grey;
+}
+p.facts{
+    margin: 50px;
+}
