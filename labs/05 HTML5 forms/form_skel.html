@@ -12,19 +12,16 @@
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
 			<div>
-				Name: <input type="text" name="studentname"/>
+				Name: <input type="text" name="studentname" pattern="[A-Za-z ]{1,}"/>
 			</div>
 			<div>
-				Student id: <input type="text" name="id"  />
+				Student id: <input type="text" name="id" pattern="[0-9]{1,}"/>
 			</div>
 			<div>
-				Email:
-				<!--
-				Make an input named "email"
-				-->
+				Email: <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
 			</div>
 			<div>
-				Assignment:
+				Assignment: <input type="text" name="assigment"/>
 				<!--
 				Make an input named "assignment"
 				-->
@@ -32,26 +29,35 @@
 			</div>
 
 			<div>
-				Code:
+				Code: <input type="textarea" name="cod"/>
 				<!--
 				Make an input named "code" which is a text area to put student's code into.
 				-->
 				
 			</div>
 			<div>
-				Cheat:
+				Cheat: <input type="checkbox" name="cheat"/>
 			<!--
 				Make an input named "cheat" which is a check box the student must check.
 			-->
 			</div>
 			<div>
-				Pay:
+			Pay:<br>
+				<label><input type="radio" name="card" value="Visa">Visa</label><br>
+				<label><input type="radio" name="card" value="Mastercard">MasterCard </label><br>
+				<label><input type="radio" name="card" value="Paypal">MasterCard </label>
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
 			</div>
 			<div>
-				Score:
+				 <label for="score">Score:</label>
+				<select name="score" id="score">
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="300">300</option>
+					<option value="400">400</option>
+				</select>
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
