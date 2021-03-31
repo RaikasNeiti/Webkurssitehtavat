@@ -1,33 +1,47 @@
+"use strict"
+let notes = [];
 
-var notes = new Array();
-
+loadList()
 function addItem() {
-	textbox = document.getElementById('item');
-	var itemText = textbox.value;
-	textbox.value = '';
-	textbox.focus();
-	var newItem = {title: itemText, quantity: 1};
+	let textbook = document.getElementById('item');
+	let itemText = textbook.value;
+	textbook.value = '';
+	textbook.focus();
+	let newItem = {title: itemText, quantity: 1};
 	notes.push(newItem);
+	saveList()
 	displayList();
 }
 
 function displayList() {
-	var table = document.getElementById('list');
+	let table = document.getElementById('list');
 	table.innerHTML = '';
-	for (var i = 0; i<notes.length; i++) {
-		var node = undefined;
-		var note = notes[i];
-		var node = document.createElement('tr');
-		var html = '<td>'+note.title+'</td><td>'+note.quantity+'</td><td><a href="#" onClick="deleteIndex('+i+')">delete</td>';
-	    node.innerHTML = html;
+	for (let i = 0; i<notes.length; i++) {
+		let note = notes[i];
+		let node = document.createElement('tr');
+		node.innerHTML = '<td>' + note.title + '</td><td>' + note.quantity + '</td><td><a href="#" onClick="deleteIndex(' + i + ')">delete</td>';
 		table.appendChild(node);
+
+	}
+}
+function saveList() {
+	localStorage.notes = JSON.stringify(notes);
+}
+
+function loadList() {
+	console.log('loadList');
+	if (localStorage.notes) {
+		notes = JSON.parse(localStorage.notes);
+		displayList();
 	}
 }
 
 function deleteIndex(i) {
 	notes.splice(i, 1);
+	saveList()
 	displayList();
 }
 
+let button;
 button = document.getElementById('add');
 button.onclick = addItem;

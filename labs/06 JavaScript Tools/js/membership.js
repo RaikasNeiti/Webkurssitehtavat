@@ -9,11 +9,11 @@ function calculate() {
     'use strict';
 
     // Variable to store the total cost:
-    var cost;
+    let cost;
 
     // Get a reference to the form elements:
-    var type = document.getElementById('type');
-    var years = document.getElementById('years');
+    let type = document.getElementById('type');
+    let years = document.getElementById('years');
 
     // Convert the year to a number:
     if (years && years.value) {
