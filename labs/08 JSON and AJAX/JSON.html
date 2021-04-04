@@ -18,8 +18,28 @@ var fido2 = {
 var fidoString = JSON.stringify(fido2);
 console.log("We made a string from a dog! " + fidoString);
 
+var employee = {
+  name: { first: "Colin",
+    second: "Stephen" },
+  title: "Assistant Lecturer"
+}
+var empString = JSON.stringify(employee);
+console.log("look at this employee " + empString)
+
+var employeeName = employee.name;
+
+console.log( employeeName)
+function handlename(){
+  var  name = document.getElementById("EmpName");
+  name.innerHTML = "Name is " + employee.name;
+
+}
+
   </script>
 </head>
 <body>
+<div>
+  <p id="EmpName" onclick="handlename()">Get name click here</p>
+</div>
 </body>
 </html>

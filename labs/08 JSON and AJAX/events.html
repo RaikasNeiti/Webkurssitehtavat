@@ -17,6 +17,25 @@ window.onload = function() {
 		div.attachEvent("click", handleClick);
 	}
 };
+window.onmouseover = function (){
+  var div1 = document.getElementById("overme");
+  if (div1.addEventListener) {
+    div1.addEventListener("mouseover", handleOver, false);
+  } else if (div.attachEvent) {
+    div1.attachEvent("mouseover", handleOver);
+  }
+};
+
+function  handleOver(e){
+  var evt = e || window.event;
+  var target;
+  if (evt.target) {
+    target = evt.target;
+  } else {
+    target = evt.srcElement;
+  }
+  alert("You are over me! " + target.id);
+}
 
 function handleClick(e) {
 	var evt = e || window.event;
@@ -33,5 +52,6 @@ function handleClick(e) {
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<span id="overme">Come over me!</span>
 </body>
 </html>

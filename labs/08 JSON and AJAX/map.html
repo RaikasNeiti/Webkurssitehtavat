@@ -10,6 +10,7 @@
 		map.onmousemove = showCoords;
 		var mydiv = document.getElementById("mydiv");
 		mydiv.onclick = addtext;
+
 	}
 	
 	function showCoords(eventObj) {
@@ -28,11 +29,18 @@
 			alert("Looks like you have an old browser!");
 		}
 	}
+	function clicktoadd(){
+	    var ul = document.createElement("ul");
+        ul.innerHTML = "Lisää";
+	    document.body.appendChild(ul);
+
+    }
   </script>
 </head>
 <body>
 	<img id="map" src="data/map.jpg">
 	<p id="coords">Move mouse over map to find coordinates...</p>
 	<div id="mydiv" style="border:1px solid red">I am a DIV! Click me.</div>
+    <button onclick="clicktoadd()"> Try it!</button>
 </body>
 </html>
