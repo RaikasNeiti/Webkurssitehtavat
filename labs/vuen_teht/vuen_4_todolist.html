@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+    <input v-model="user" placeholder="What todo?" >
+    <button  v-on:click="addToList">Add</button>
+
+<ul>
+    <li v-for="item in items" :key="item.message">
+        {{ item.message }}
+    </li>
+</ul>
+</div>
+<script>
+    var app = new Vue({
+            el: '#app',
+            data: {
+                items: [
+
+                ]
+            },
+        methods: {
+                addToList(){
+                    this.items.push({ message: this.user})
+                }
+
+        }
+
+        })
+
+</script>
+</body>
+</html>

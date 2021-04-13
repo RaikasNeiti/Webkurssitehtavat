@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+<div id="app">
+    <input v-model="user" placeholder="User" >
+    <button  v-on:click="addToList">Add User</button>
+    <button  v-on:click="DeleteUser">Delete Last</button>
+
+    <ul>
+        <li v-for="item in items" :key="item.message">
+            {{ item.message }}
+            <button v-on:click="DeleteThis">Delete User</button>
+        </li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [
+
+            ]
+        },
+        methods: {
+            addToList(){
+                this.items.push({ message: this.user})
+            },
+            DeleteUser(){
+                this.items.pop()
+            },
+            DeleteThis(){
+
+            }
+
+
+        }
+
+    })
+
+</script>
+</body>
+</html>
